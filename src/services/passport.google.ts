@@ -6,7 +6,7 @@ import {User} from '../entity/User'
 passport.use(new GoogleStrategy({
     clientID: "your id",
     clientSecret: "your secret",
-    callbackURL: "https://gusto-finalproject.herokuapp.com/login/google/callback"    
+    callbackURL: "<localhost>/login/google/callback"    
   },
   async function(accessToken,refreshToken,profile,done: Function) {  
     
