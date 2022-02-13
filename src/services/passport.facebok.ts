@@ -6,7 +6,7 @@ import {User} from '../entity/User'
 passport.use(new FacebookStrategy({
     clientID: "your id",
     clientSecret: "your secret",
-    callbackURL: "https://gusto-finalproject.herokuapp.com/login/facebook/callback",
+    callbackURL: "<localhost>/login/facebook/callback",
     profileFields: ["id","displayName","email","name"]    
   },
   async function(accessToken,refreshToken,profile,done: Function) {  
