@@ -1,0 +1,48 @@
+extends ../base
+
+block content
+    main.main 
+        .page-header
+            h3 Add Movie
+            hr
+
+        form.form.form--login(action="/profile/createpost/movie",method='POST')
+            .form__group.ma-bt-md
+                label.form__label(for='title') Title
+                input#title.form__input(type='text', name="title" , placeholder='title')
+            .form__group
+                label.form__label(for='description') Description
+                textarea#description.form__input(type='text', name="description", placeholder='description')   
+            .form__group
+                label.form__label(for='photo') Photo
+                input#photo.form__input(type='text', name="photo", placeholder='photo_url', value="Photo-Url")   
+            .form__group
+                label.form__label(for='shared') Share
+                input#check.form-check-input(type='checkbox' name="shared" value="true")             
+            .form__group
+                button.btn.btn-success.btn-lg(type='submit') Add Movie
+
+        .page-header.mt-5
+            h3 Add Actor
+            hr
+
+        form.form.form--login(action="/profile/createpost/actor", method='POST')
+            .form__group.ma-bt-md
+                label.form__label(for='firstname') Firstname
+                input#title.form__input(type='text', name="firstname" , placeholder='firstname')
+            .form__group
+                label.form__label(for='lastname') Lastname
+                input#description.form__input(type='text', name="lastname", placeholder='lastname')   
+            .form__group
+                label.form__label(for='description') Description
+                textarea#description.form__input(type='text', name="description", placeholder='description')
+            .form__group
+                label.form__label(for='photo') Photo
+                input#photo.form__input(type='text', name="photo", placeholder='photo_url',value="Photo-Url")   
+            .form__group
+                label.form__label(for='shared') Share
+                input#check.form-check-input(type='checkbox' name="shared" value="true")             
+            .form__group
+                button.btn.btn-success.btn-lg(type='submit') Add Actor
+
+    

@@ -1,0 +1,13 @@
+extends base
+
+block content  
+    main.main
+        .card-container    
+            each user in users
+                .card
+                    .card__header            
+                        h3.heading-tertirary
+                    .card__details
+                        h4.card__sub-heading= `Username : ${user.username}`
+                        p.card__text= `Email : ${user.email}`                  
+                       

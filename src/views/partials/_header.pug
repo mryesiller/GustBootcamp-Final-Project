@@ -1,0 +1,16 @@
+header.header
+  nav.nav.nav--tours
+    a.nav__el(href='/') Gusto&RemoteTeam
+  .header__logo
+    img(src='/img/gusto.png' alt='Gusto logo')
+  nav.nav.nav--user
+    if user
+      a.nav__el(href='/profile') Profile  
+      a.nav__el(href='/profile/myposts') My Posts
+      a.nav__el(href='/profile/createpost') Create Post    
+            
+      a.nav__el.nav__el--logout(href='/logout') Log out     
+     
+    else
+      a.nav__el(href='/login') Log in
+      a.nav__el.nav__el--cta(href='/register') Sign up

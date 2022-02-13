@@ -1,0 +1,47 @@
+{
+   "name": "new-typeorm-project",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "devDependencies": {
+      "@types/bcryptjs": "^2.4.2",
+      "@types/body-parser": "^1.19.2",
+      "@types/cookie-parser": "^1.4.2",
+      "@types/express": "^4.17.13",
+      "@types/express-flash": "^0.0.2",
+      "@types/express-session": "^1.17.4",
+      "@types/jsonwebtoken": "^8.5.8",
+      "@types/node": "^8.0.29",
+      "@types/passport": "^1.0.7",
+      "@types/passport-facebook": "^2.1.11",
+      "@types/passport-google-oauth20": "^2.0.11",
+      "@types/passport-jwt": "^3.0.6",
+      "@types/pug": "^2.0.6",
+      "typescript": "3.3.3333"
+   },
+   "dependencies": {
+      "bcryptjs": "^2.4.3",
+      "body-parser": "^1.19.1",
+      "cookie-parser": "^1.4.6",
+      "dotenv": "^14.3.0",
+      "express": "^4.17.2",
+      "express-flash": "^0.0.2",
+      "express-session": "^1.17.2",
+      "express-validator": "^6.14.0",
+      "jsonwebtoken": "^8.5.1",
+      "mysql": "^2.18.1",
+      "nodemon": "^2.0.15",
+      "passport": "^0.5.2",
+      "passport-facebook": "^3.0.0",
+      "passport-google-oauth20": "^2.0.0",
+      "passport-jwt": "^4.0.0",
+      "pg": "^8.4.0",
+      "pug": "^3.0.2",
+      "reflect-metadata": "^0.1.10",
+      "ts-node": "^10.5.0",
+      "typeorm": "0.2.41"
+   },
+   "scripts": {
+      "start": "ts-node src/index.ts",
+      "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
+   }
+}

@@ -1,0 +1,56 @@
+[
+   {
+      "type": "postgres",
+      "host": "<Your Host>",
+      "port": 5432,
+      "username": "<Your username>",
+      "password": "<Your password>",
+      "database": "<Your database>",
+      "extra":{
+         "ssl":{"rejectUnauthorized": false}
+      },
+      "synchronize": true,
+      "logging": false,
+      "entities": [
+         "src/entity/**/*.ts"
+      ],
+      "migrations": [
+         "src/migration/**/*.ts"
+      ],
+      "subscribers": [
+         "src/subscriber/**/*.ts"
+      ],
+      "cli": {
+         "entitiesDir": "src/entity",
+         "migrationsDir": "src/migration",
+         "subscribersDir": "src/subscriber"
+      }
+   },
+   {
+      "type": "mysql",
+      "host": "<Your Host>",
+      "port": 3306,
+      "username": "<Your username>",
+      "password": "<Your password>",
+      "database": "<Your database>",      
+      "synchronize": true,
+      "logging": false,
+      "entities": [
+         "src/entity/User.ts",
+         "src/entity/mySql/*.ts"
+      ],
+      "migrations": [
+         "src/migration/**/*.ts"
+      ],
+      "subscribers": [
+         "src/subscriber/**/*.ts"
+      ],
+      "cli": {
+         "entitiesDir": "src/entity",
+         "migrationsDir": "src/migration",
+         "subscribersDir": "src/subscriber"
+      }
+   }
+]
+
+

@@ -1,0 +1,80 @@
+extends base
+
+block content  
+    if user
+        main.main
+            .card-container    
+                each movie in movies                 
+                    .card
+                        .card_picture                        
+                            img.card__picture-img(src=`${movie.photo}`)
+                        .card__header            
+                            h3.heading-tertirary
+                        .card__details
+                            h4.card__sub-heading= `MOVIE : ${movie.title}`
+                            p.card__text= `ABOUT : ${movie.description}`
+                        .card__details
+                            h4.card__sub-heading= `Creator : ${movie.creator}`                                                             
+                        .card__forms
+                            form.form(action=`/movies/comment/${movie.id}`,method='POST')
+                                .form__input
+                                    label.form__label(for='comment') Comment Movie
+                                    textarea#comment.input(type='text', name="comment", placeholder='comment')       
+                                    button.btn-success.btn-lg(type='submit') SEND
+                        .card__forms
+                            form.form(action=`/movies/likes/${movie.id}`,method='POST')
+                                .form__input                                                                                                           
+                                    button.btn.btn-success.btn-lg(type='submit')=`Likes :${movie.like.length}`                                                                            
+                        .card__details.mb-5
+                            h4.card__sub-heading Comments
+                            each comment in movie.comments 
+                                p.card__text=`${comment.username} : ${comment.comment}`
+            .card-container.mt-5    
+                each actor in actors                 
+                    .card
+                        .card_picture                        
+                            img.card__picture-img(src=`${actor.photo}`)
+                        .card__header            
+                            h3.heading-tertirary
+                        .card__details
+                            h4.card__sub-heading= `ACTOR :${actor.firstname} ${actor.lastname}`
+                            p.card__text= `ABOUT : ${actor.description}`
+                        .card__details
+                            h4.card__sub-heading= `Creator : ${actor.creator}`                                                             
+                        .card__forms
+                            form.form(action=`/actors/comment/${actor.id}`,method='POST')
+                                .form__input
+                                    label.form__label(for='comment') Comment Actor
+                                    textarea#comment.input(type='text', name="comment", placeholder='comment')       
+                                    button.btn-success.btn-lg(type='submit') SEND
+                        .card__forms
+                            form.form(action=`/actors/likes/${actor.id}`,method='POST')
+                                .form__input                                                                         
+                                    button.btn-success.btn-lg(type='submit')=`Likes :${actor.like.length}`                                     
+                                                                            
+                        .card__details
+                            h4.card__sub-heading Comments
+                            each comment in actor.comments 
+                                p.card__text=`${comment.username} : ${comment.comment}`
+    else 
+        main.main.home 
+            img(src='/img/gusto_home.jpg' alt='Gusto')
+            div 
+                h1 Gusto&&RemoteTeam Bootcamp Final Project.
+                p  This is a simple movie and actor sharing webproject built on nodejs backend
+                h2 Project technology and structure
+                ul 
+                    li Backend>NodeJs Frontend>Pug engine template
+                    li Typeorm with MySql and Postgres (2 connecitons)
+                    li MVC structure
+                h2 Project Details  
+                ul 
+                    li User login-register authentication with google and facebook signup
+                    li Users can change username and password on profile page 
+                    li Users can delete account on profile page
+                    li Users can create favorite Movie and favorite Actor on Create Post page 
+                    li Users can share favorite Movie and favorite Actor on My Posts page
+                    li Users can delete and change status of shared favorite Movies,favorite Actors on My Posts page
+                    li Users can send comment and like favorite Movies,favorite Actors created by other users on Dashboard when login
+                
+            

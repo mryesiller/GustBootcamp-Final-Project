@@ -1,0 +1,24 @@
+if messages.errors
+  .alert.alert-danger.fade.show     
+    for error in messages.errors
+      div= error.msg
+    script. 
+        window.setTimeout(() => {         
+           window.location.reload();         
+        }, 2000)  
+if messages.info
+  .alert.alert-info.fade.show      
+    for info in messages.info
+      div= info.msg
+    script. 
+        window.setTimeout(() => {
+           window.location.reload();
+        }, 2000)    
+if messages.success
+  .alert.alert-success.fade.show     
+    for success in messages.success
+      div#msg-div= success.msg
+    script. 
+        window.setTimeout(() => {
+          window.location.reload();                 
+        }, 2000)    

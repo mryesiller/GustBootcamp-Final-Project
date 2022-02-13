@@ -1,0 +1,53 @@
+extends ../base
+
+block content  
+    main.main
+        .card-container    
+            each movie in movies                 
+                .card
+                    .card_picture                        
+                        img.card__picture-img(src=`${movie.photo}`)
+                    .card__header            
+                        h3.heading-tertirary
+                    .card__details
+                        h4.card__sub-heading= `Title : ${movie.title}`
+                        p.card__text= `Description : ${movie.description}`
+                    .card__details
+                        h4.card__sub-heading Comments
+                        each comment in movie.comments 
+                            p.card__text=`${comment.username} : ${comment.comment}`
+                    .card__forms
+                        form.form(action=`/profile/myposts/updatemovie/${movie.id}`,method='POST')                                    
+                            if movie.shared
+                                .form__input
+                                    button.btn.btn-success.btn-lg(type='submit' name="button" value="true") Unshare Movie
+                            else
+                                .form__input 
+                                    button.btn.btn-success.btn-lg(type='submit' name="button" value="false") Share Movie                           
+                    .card__forms
+                        form.form(action=`/profile/myposts/deletemovie/${movie.id}`,method='POST')
+                            .form__input                                                                         
+                                button.btn.btn-success.btn-lg(type='submit') delete movie                
+
+        .card-container.mt-5    
+            each actor in actors                 
+                .card
+                    .card_picture                        
+                        img.card__picture-img(src=`${actor.photo}`)
+                    .card__header            
+                        h3.heading-tertirary
+                    .card__details
+                        h4.card__sub-heading= `ACTOR : ${actor.firstname} ${actor.lastname}`
+                        p.card__text= `ABOUT : ${actor.description}`                        
+                    .card__forms
+                        form.form(action=`/profile/myposts/updateactor/${actor.id}`,method='POST')                                    
+                            if actor.shared
+                                .form__input
+                                    button.btn.btn-success.btn-lg(type='submit' name="button" value="true") Unshare Actor
+                            else
+                                .form__input 
+                                    button.btn.btn-success.btn-lg(type='submit' name="button" value="false") Share Actor     
+                    .card__forms
+                            form.form(action=`/profile/myposts/deleteactor/${actor.id}`,method='POST')
+                                .form__input                                                                         
+                                    button.btn.btn-success.btn-lg(type='submit') delete actor           

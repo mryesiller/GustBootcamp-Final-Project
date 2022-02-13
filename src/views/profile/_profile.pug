@@ -1,0 +1,42 @@
+extends ../base
+
+block content
+    main.main 
+        .page-header
+            h3 Change Username
+            hr
+
+        form.form.form--login(action="/profile/username",method='POST')
+            .form__group.ma-bt-md
+                label.form__label(for='username') Username
+                input#password.form__input(type='username', name="username" , placeholder='username')                      
+            .form__group
+                button.btn.btn-success.btn-lg(type='submit') Update Username
+
+        .page-header.mt-5
+            h3 Change Password
+            hr
+
+        form.form.form--login(action='/profile/password', method='POST')
+            .form__group.ma-bt-md
+                label.form__label(for='password') New Password
+                input#password.form__input(type='password', name="password" , minlength='6')
+            .form__group
+                label.form__label(for='confirmPassword') Confirm Password
+                input#email.form__input(type='password', name="confirmPassword", minlength='6')           
+            .form__group
+                button.btn.btn-success.btn-lg(type='submit') Change Password 
+
+        .page-header.mt-5
+            h3 Delete Account
+            hr        
+
+        form.form.form--login(action='/profile/delete', method='GET')
+            .form-group.row.justify-content-md-center
+                p.offset-sm-3.col-sm-7 You can delete your account, but keep in mind this action is irreversible.
+                input(type='hidden', name='_csrf', value=_csrf)
+                .form__group
+                    button.btn.btn-danger(type='submit')
+                        i.fa.fa-trash
+                        | Delete my account
+    

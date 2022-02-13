@@ -1,0 +1,24 @@
+extends ../base
+
+block content
+  main.main
+    .login-form
+      h2.ma-bt-lg Log into your account
+      form.form.form--login(method='POST')
+        .form__group
+          label.form__label(for='email') Email Address
+          input#email.form__input(type='email', name="email", placeholder='you@example.com', required)
+        .form__group.ma-bt-md
+          label.form__label(for='password') Password
+          input#password.form__input(type='password', name="password" , placeholder='••••••', required, minlength='6')
+        .form__group
+          button.btn.btn-success.btn-lg(type='submit') Login
+        .form__group
+          div.col-md-12
+            a.btn.btn-lg.btn-google.btn-block.text-uppercase.btn-outline(href='/login/google') Signup with Google
+              img(src='https://img.icons8.com/color/16/000000/google-logo.png')
+          div.col-md-12.mt-3
+            a.btn.btn-lg.btn-google.btn-block.text-uppercase.btn-outline(href='/login/facebook') Signup with Facebook
+              img(src='https://img.icons8.com/officexs/16/000000/facebook.png')          
+          
+
